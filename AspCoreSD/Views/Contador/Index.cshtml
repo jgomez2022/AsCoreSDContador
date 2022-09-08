@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AspCoreSD.Models.Contador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado de contadores</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numerocontador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aplica_ts)
+            </th>
+            <th>
+                <a asp-action="Create" class="fa-sharp fa-solid fa-toggle-large-off"><i class="fa-sharp fa-solid fa-square-plus"></i>Crear Contador</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numerocontador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aplica_ts)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('¿Esta seguro de eliminar el registro?')"><i class="fa-sharp fa-solid fa-square-xmark"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+﻿@model AspCoreSD.Models.Contadorescliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contadorescliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdContador)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdContador)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
